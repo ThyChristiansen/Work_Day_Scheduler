@@ -20,13 +20,20 @@ $(document).ready(function(){
             var inputCol = $("<div>")
             inputCol.text("Placeholder   Enter note here")
             inputCol.addClass("toDo col-8");
+            inputCol.attr("id", "input" + i);
 
             var saveBtn = $("<button>")
             saveBtn.addClass("btn btn-primary saveBtn col-2")
             saveBtn.text("save");
-            $(row).append(hourCol).append(inputCol).append(saveBtn);
+            saveBtn.attr("id", "Btn" + i);
+
+            $(row).append(hourCol)
+            $(row).append(inputCol)
+            $(row).append(saveBtn);
             $(".container").append(row);
           }
+
+
     }
     Calander();
 })
