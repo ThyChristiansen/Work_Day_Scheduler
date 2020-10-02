@@ -13,25 +13,25 @@ $(document).ready(function(){
         for (i = 0; i < workHours.length; i++) {
             // create rows for each hour in the work day
             var row = $("<div>")
-            row.addClass("row");
+            row.addClass("row time-block");
 
             // Create a small col to indicate which hour block the row is
             var hourCol = $("<div>")
             hourCol.text(workHours[i])
-            hourCol.addClass("col-2");
+            hourCol.addClass("col-2 hour");
 
             // Create a large col for the input of the ToDo items on teh calander
             var inputCol = $("<input>")
-            inputCol.val("Placeholder   Enter note here")
-            inputCol.addClass("toDo col-8");
+            inputCol.val("Placeholder, Enter note here")
+            inputCol.addClass("toDo col-8 description");
 
             // Create Id's for each col based on the index they were created from (ie: 0 - 8)
             inputCol.attr("id", "input" + i);
 
             // repeted input but instead created a button and added id's for each
             var saveBtn = $("<button>")
-            saveBtn.addClass("btn btn-primary col-2")
-            saveBtn.text("save");
+            saveBtn.addClass("btn btn-primary col-2 saveBtn")
+            saveBtn.append($("<i>").addClass("far fa-save"));
             saveBtn.attr("id", "Btn" + i);
 
             // Made sure each row, col, and btn populated on the webpage
@@ -52,7 +52,6 @@ $(document).ready(function(){
 
             var savedInput0 = localStorage.getItem("toDo0");
             $("#input0").val(savedInput0);
-            console.log(savedInput0);
 
             // local storage btn 1
              $("#Btn1").on("click", function (event) {
@@ -141,6 +140,32 @@ $(document).ready(function(){
 
             var savedInput8 = localStorage.getItem("toDo8");
             $("#input8").val(savedInput8);
+
+            // now to change the color of the rows based on the time of day
+            function changeColor() {
+                var currentHour = momnet().hours();
+                console.log(currentHour);
+
+                $(".time-block").each(function(){
+                    var calenderHour = parseInt($(this).attr("id"));
+
+                    if (calanderHour < currentHour){
+                        $(this).addClass("past");
+
+                    }
+                    else if (calenderHour --- currentHour){
+                        $(this).removeClass("past");
+                        $(this).removeClass("present");
+                    }
+                    else {
+                        $(this).removeClass("past");
+                        $(this).removeClass("present");
+                        $(this).removeClass("future");
+                    }
+                    
+                })
+            }
+            changeColor();
     }
     Calander();
 })
