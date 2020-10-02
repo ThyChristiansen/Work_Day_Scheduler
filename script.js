@@ -41,16 +41,106 @@ $(document).ready(function(){
             $(".container").append(row);
           }
 
-          // create a function for when each save btn is pushed it saves the input in local storage
-          $("#Btn0").on("click", function (event) {
-              event.preventDefault();
+            // create a function for when each save btn is clicked it saves the input in local storage
+            // local storage btn 0
+            $("#Btn0").on("click", function (event) {
+                event.preventDefault();
 
-              var input0 = $("#input0").val();
-              localStorage.setItem("toDo0", input0);
-          });
-          var savedInput0 = localStorage.getItem("toDo0");
-          $("#input0").val(savedInput0);
-          console.log(savedInput0);
+                var input0 = $("#input0").val();
+                localStorage.setItem("toDo0", input0);
+            });
+
+            var savedInput0 = localStorage.getItem("toDo0");
+            $("#input0").val(savedInput0);
+            console.log(savedInput0);
+
+            // local storage btn 1
+             $("#Btn1").on("click", function (event) {
+                event.preventDefault();
+
+                var input1 = $("#input1").val();
+                localStorage.setItem("toDo1", input1);
+            });
+
+            var savedInput1 = localStorage.getItem("toDo1");
+            $("#input1").val(savedInput1);
+
+            // local storage btn 2
+            $("#Btn2").on("click", function (event) {
+                event.preventDefault();
+
+                var input2 = $("#input2").val();
+                localStorage.setItem("toDo2", input2);
+            });
+
+            var savedInput2 = localStorage.getItem("toDo2");
+            $("#input2").val(savedInput2);
+            
+            // local storage btn 3
+            $("#Btn3").on("click", function (event) {
+                event.preventDefault();
+
+                var input3 = $("#input3").val();
+                localStorage.setItem("toDo3", input3);
+            });
+
+            var savedInput3 = localStorage.getItem("toDo3");
+            $("#input3").val(savedInput3);
+
+            // local storage btn 4
+            $("#Btn4").on("click", function (event) {
+                event.preventDefault();
+
+                var input4 = $("#input4").val();
+                localStorage.setItem("toDo4", input4);
+            });
+
+            var savedInput4 = localStorage.getItem("toDo4");
+            $("#input4").val(savedInput4);
+
+            // local storage btn 5
+            $("#Btn5").on("click", function (event) {
+                event.preventDefault();
+
+                var input5 = $("#input5").val();
+                localStorage.setItem("toDo5", input5);
+            });
+
+            var savedInput5 = localStorage.getItem("toDo5");
+            $("#input5").val(savedInput5);
+
+            // local storage btn 6
+            $("#Btn6").on("click", function (event) {
+                event.preventDefault();
+
+                var input6 = $("#input6").val();
+                localStorage.setItem("toDo6", input6);
+            });
+
+            var savedInput6 = localStorage.getItem("toDo6");
+            $("#input6").val(savedInput6);
+
+            // local storage btn 7
+            $("#Btn7").on("click", function (event) {
+                event.preventDefault();
+
+                var input7 = $("#input7").val();
+                localStorage.setItem("toDo7", input7);
+            });
+
+            var savedInput7 = localStorage.getItem("toDo7");
+            $("#input7").val(savedInput7);
+
+            // local storage btn 8
+            $("#Btn8").on("click", function (event) {
+                event.preventDefault();
+
+                var input8 = $("#input8").val();
+                localStorage.setItem("toDo8", input8);
+            });
+
+            var savedInput8 = localStorage.getItem("toDo8");
+            $("#input8").val(savedInput8);
     }
     Calander();
 })
