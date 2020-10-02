@@ -14,6 +14,7 @@ $(document).ready(function(){
             // create rows for each hour in the work day
             var row = $("<div>")
             row.addClass("row time-block");
+            row.attr("id", i + 9);
 
             // Create a small col to indicate which hour block the row is
             var hourCol = $("<div>")
@@ -23,7 +24,7 @@ $(document).ready(function(){
             // Create a large col for the input of the ToDo items on teh calander
             var inputCol = $("<input>")
             inputCol.val("Placeholder, Enter note here")
-            inputCol.addClass("toDo col-8 description");
+            inputCol.addClass("toDo col-8 input");
 
             // Create Id's for each col based on the index they were created from (ie: 0 - 8)
             inputCol.attr("id", "input" + i);
@@ -143,24 +144,26 @@ $(document).ready(function(){
 
             // now to change the color of the rows based on the time of day
             function changeColor() {
-                var currentHour = momnet().hours();
+                var currentHour = moment().hours();
                 console.log(currentHour);
 
                 $(".time-block").each(function(){
                     var calenderHour = parseInt($(this).attr("id"));
 
-                    if (calanderHour < currentHour){
+                    if (calenderHour < currentHour){
                         $(this).addClass("past");
-
-                    }
-                    else if (calenderHour --- currentHour){
-                        $(this).removeClass("past");
                         $(this).removeClass("present");
+                        $(this).removeClass("future");
+                    }
+                    else if (calenderHour === currentHour){
+                        $(this).removeClass("past");
+                        $(this).addClass("present");
+                        $(this).removeClass("future");
                     }
                     else {
                         $(this).removeClass("past");
                         $(this).removeClass("present");
-                        $(this).removeClass("future");
+                        $(this).addClass("future");
                     }
                     
                 })
